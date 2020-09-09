@@ -1,0 +1,34 @@
+@startuml quizmanager
+entity User {
+    id INT PRIMARY KEY
+    email STRING
+    password STRING
+    view_permissions BOOLEAN
+    edit_permissions BOOLEAN
+
+}
+
+entity Quiz {
+    id INT PRIMARY KEY
+    name STRING
+    user_id INT
+    questions [Question]
+
+}
+
+entity Question {
+    id INT PRIMARY KEY
+    question_text STRING
+    answers [Answer]
+}
+
+entity Answer {
+    id INT PRIMARY KEY
+    correct BOOLEAN
+    answer_text STRING
+}
+
+User::id--{Quiz::user_id
+Quiz::questions--{Question::id
+Question::answers--{Answer::id
+@enduml

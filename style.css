@@ -1,0 +1,120 @@
+body {
+    background-color: #585858;
+}
+
+h1 {
+    font-family: 'IM Fell Great Primer', serif;
+    margin: 100px auto;
+    text-align: center;
+    color: white;
+}
+
+p {
+    font-family: 'IM Fell Great Primer', serif;
+}
+
+#user {
+    color: white;
+}
+
+text {
+    font-family: 'IM Fell Great Primer', serif;
+}
+
+#formContainer {
+    background-color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    width: 25%;
+    height: 45%;
+    margin: 10px auto;
+}
+
+#header {
+    width: 100%;
+    height: 10px;
+    background: rgb(255, 255, 255);
+}
+
+#email {
+    width: 70%;
+    height: 40px;
+    display: block;
+    margin: 0 auto;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid rgb(133, 133, 133);
+}
+
+#password {
+    width: 70%;
+    height: 40px;
+    display: block;
+    margin: 10 auto;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid rgb(133, 133, 133);
+}
+
+#signUp {
+    background-color: #585858;
+    color: white;
+    border: none;
+    font-weight: bold;
+    padding: 15px 32px;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin-top: 20px;
+    margin-left: 54px;
+}
+
+#signIn {
+
+    background-color:#585858;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 15px 32px;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+}
+
+
+.quizUser {
+color: white;
+}
+
+#signOut {
+    background-color: #d3d3d3;
+    color: black;
+    border: none;
+    padding: 10px 32px;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin-top: 12px;
+    margin-left: 112px;
+}
+
+input {
+    font-family: 'IM Fell Great Primer', serif;
+}
+
+button {
+    font-family: 'IM Fell Great Primer', serif;
+}
+
+#button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,019);
+}
+
+#user {
+    display: inline-block;
+}
