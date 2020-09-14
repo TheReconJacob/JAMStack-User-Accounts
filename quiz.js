@@ -20,7 +20,8 @@ function renderQuiz(){
                     <div class="question"></div>
                     <div class="answerOptions${doc.id}"></div>
                     <div class="buttonArea">
-                        <button id="submit" class="hidden">Submit</button>
+                        <button class="submit">Submit</button>
+                        <button id="delete-quiz" class="hidden" onClick="deleteQuiz(${doc.id})">Delete Quiz</button>
                     </div>
                 </div>
             </div>
@@ -105,6 +106,11 @@ function openQuiz(quiz){
     }
 }
 
+function deleteQuiz(id){
+  setTimeout(function(){window.location.reload();},1000);
+  db.collection("Quizzes").doc(`${id}`).delete();
+}
+
 var scorepercentage=0;
 var correct=0;
 var incorrect=0;
@@ -175,7 +181,7 @@ function closeQuiz(quiz){
   
           if (_percentage >= _input_percentage) {
               _cir_progress.attr("stroke-dasharray",_percentage + ',764');
-              _text_percentage.html('<tspan x="50%" dy="0em">'+unchnagedPer + '% </tspan><tspan  x="50%" dy="1.9em">Your Score</tspan>');
+              _text_percentage.html('<tspan class="score" x="50%" dy="0em">'+unchnagedPer + '% </tspan><tspan  x="50%" dy="1.9em">Your Score</tspan>');
               clearInterval(_sleep);
           } else {
   
@@ -202,7 +208,7 @@ function closeQuiz(quiz){
   
     renderQuiz();
   
-    $(document).on('click','#submit',function(e){
+    $(document).on('click','.submit',function(e){
       e.target.parentElement.parentElement.parentElement.parentElement.getElementsByClassName("briefchart")[0].style.display = "";``
       var radio = e.target.parentElement.parentElement.querySelectorAll("[data-correct='true']")
       for (var i = 0; i < radio.length; i++) {
@@ -254,6 +260,7 @@ function closeQuiz(quiz){
           User_Id: firebase.auth().currentUser.uid
         })
         db.collection("Quizzes").doc(`${doc.data().Number}`).get().then(function(subDoc) {
+          
           for (var i = 1; i < question_number; i++) {
               var questionText = document.getElementById(`questionSet${i}`).getElementsByClassName(`question`)[0];
               subDoc.ref.collection(`Questions`).doc(`${i}`).set({
